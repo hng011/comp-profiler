@@ -10,6 +10,9 @@ class ApiKeyMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         api_key = request.headers.get("X-API-Key")
 
+        if request.method == "OPTIONS":
+            return await call_next(request)
+
         if not api_key or api_key != settings.API_KEY:
             return JSONResponse(
                 status_code=status.HTTP_401_UNAUTHORIZED,
@@ -28,5 +31,6 @@ def setup_middleware(app: FastAPI) -> None:
         allow_methods       = settings.ALLOWED_METHODS,
         allow_headers       = settings.ALLOWED_HEADERS,
     )
+    
     
     app.add_middleware(ApiKeyMiddleware)
