@@ -9,7 +9,7 @@ echo "running ${LOCAL_REPO}/${IMAGE_NAME}:latest"
 #     -e PYTHONUNBUFFERED=1 \
 #     ${LOCAL_REPO}/${IMAGE_NAME}:latest
 
-docker run --env-file .env \
+docker run --rm --env-file .env \
     -p "$HOST_PORT":"$APP_PORT" \
     -e API_NAME="$API_NAME" \
     -e API_VERSION="$API_VERSION" \
