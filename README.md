@@ -1,5 +1,7 @@
 # Comp-Prof 📸
-Comp-prof, which stand for Company-Profiler, is a full-stack web app built with FastAPI and React. It scrapes a company website based on a given URL and uses [Google AI API](https://aistudio.google.com/) to generate a concise analysis based on the site's content user-provided notes.
+Comp-prof, which stand for Company-Profiler, is a full-stack web app built with FastAPI and React. It scrapes a company website based on a given URL and uses [Google AI API](https://aistudio.google.com/) to generate a concise analysis based on the site's content and user-provided notes.
+
+**The Web App**: https://meek-custard-450598.netlify.app/
 
 ## How To... 🔎
 
